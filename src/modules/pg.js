@@ -1,9 +1,10 @@
 const { Sequelize } = require('sequelize');
 const { PG_DB } = require('../config')
 
-const UserModel = require('../models/UserModel');
-const CategoryModel = require('../models/CategoryModel');
-const CourseModel = require('../models/CourseModel');
+const UserModel = require('../models/users/UserModel');
+const CategoryModel = require('../models/courses/CategoryModel');
+const CourseModel = require('../models/courses/CourseModel');
+const AdminModel = require('../models/users/AdminModel');
 
 const sequelize = new Sequelize(PG_DB, {
     logging: sql => console.log("SQL:", sql)
@@ -18,6 +19,7 @@ async function main() {
         db.users = await UserModel(Sequelize, sequelize);
         db.categories = await CategoryModel(Sequelize, sequelize);
         db.courses = await CourseModel(Sequelize, sequelize);
+        db.admins = await AdminModel(Sequelize, sequelize);
 
         db.categories.hasMany(db.courses, {
             foreignKey: {

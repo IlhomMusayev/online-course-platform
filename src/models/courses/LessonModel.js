@@ -1,5 +1,5 @@
 module.exports = async (Sequelize, sequelize) => {
-    return await sequelize.define('courses', {
+    return await sequelize.define('lessons', {
         id: {
             type: Sequelize.DataTypes.UUID,
             primaryKey: true,
@@ -9,18 +9,14 @@ module.exports = async (Sequelize, sequelize) => {
             type: Sequelize.DataTypes.STRING(128),
             allowNull: false
         },
-        slugify: {
-            type: Sequelize.DataTypes.STRING,
+        body: {
+            type: Sequelize.DataTypes.TEXT,
             allowNull: false
         },
         views: {
             type: Sequelize.DataTypes.BIGINT,
             allowNull: false,
             defaultValue: 1
-        },
-        body: {
-            type: Sequelize.DataTypes.TEXT,
-            allowNull: false
         }
     })
 }
