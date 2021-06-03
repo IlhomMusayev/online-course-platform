@@ -9,10 +9,6 @@ module.exports = async (Sequelize, sequelize) => {
             type: Sequelize.DataTypes.STRING(128),
             allowNull: false
         },
-        body: {
-            type: Sequelize.DataTypes.TEXT,
-            allowNull: false
-        },
         slugify: {
             type: Sequelize.DataTypes.STRING,
             allowNull: false
@@ -21,6 +17,10 @@ module.exports = async (Sequelize, sequelize) => {
             type: Sequelize.DataTypes.BIGINT,
             allowNull: false,
             defaultValue: 1
+        },
+        body: {
+            type: Sequelize.DataTypes.TEXT,
+            allowNull: false
         }
     })
 }
