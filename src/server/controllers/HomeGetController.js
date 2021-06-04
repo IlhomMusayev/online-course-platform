@@ -1,5 +1,5 @@
 module.exports = async (req, res) => {
-    res.status(200).json({
+    res.json({
         ok: true
     })
 }
