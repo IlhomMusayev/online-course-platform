@@ -10,7 +10,7 @@ module.exports = async (Sequelize, sequelize) => {
             allowNull: false
         },
         password: {
-            type: Sequelize.DataTypes.STRING(32),
+            type: Sequelize.DataTypes.STRING(64),
             allowNull: false
         },
         phone: {
