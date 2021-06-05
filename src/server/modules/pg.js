@@ -11,8 +11,10 @@ const LessonModel = require('../models/courses/LessonModel');
 const CommentModel = require('../models/courses/CommentModel');
 
 const sequelize = new Sequelize(PG_DB, {
-    logging: sql => console.log("SQL:", sql)
+    // logging: sql => console.log("SQL:", sql)
 });
+
+module.exports = main();
 
 async function main() {
     try {
@@ -113,8 +115,8 @@ async function main() {
             }
         })
 
-        await sequelize.sync({ force: true })
-
+        // await sequelize.sync({ force: true })
+        return db;
 
     } catch (e) {
         console.log('Connection error:', e);
